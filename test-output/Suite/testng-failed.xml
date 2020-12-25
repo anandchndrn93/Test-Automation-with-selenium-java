@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <method-selectors>
+  <method-selector>
+    <script language="beanshell">
+      <![CDATA[groupToRun = System.getProperty("groupName");
+                groups.containsKey(groupToRun);
+                ]]>
+    </script>
+  </method-selector>
+  </method-selectors>
+  <test thread-count="3" parallel="tests" name="authentication(failed)">
+    <method-selectors>
+      <method-selector>
+        <script language="beanshell">
+          <![CDATA[groupToRun = System.getProperty("groupName");
+                groups.containsKey(groupToRun);
+                ]]>
+        </script>
+      </method-selector>
+    </method-selectors>
+    <classes>
+      <class name="com.demoblaze.tests.AuthenticationTest">
+        <methods>
+          <include name="userLogoutTest"/>
+          <include name="invaliduserLoginTest"/>
+          <include name="cancelLogintest"/>
+          <include name="userLoginTest"/>
+        </methods>
+      </class> <!-- com.demoblaze.tests.AuthenticationTest -->
+    </classes>
+  </test> <!-- authentication(failed) -->
+</suite> <!-- Failed suite [Suite] -->

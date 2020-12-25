@@ -1,0 +1,56 @@
+2020-12-25 14:32:46 INFO  BrowserFactory:28 - Launching google chrome
+2020-12-25 14:32:47 INFO  BrowserFactory:28 - Launching google chrome
+2020-12-25 14:32:49 INFO  BrowserFactory:28 - Launching google chrome
+2020-12-25 14:32:52 INFO  Listners:27 - starting Test Case: purchaseProduct
+2020-12-25 14:32:52 INFO  PurchaseTest:51 - Loging in as user anandchndrn@demo.com
+2020-12-25 14:32:52 INFO  Listners:27 - starting Test Case: userLoginTest
+2020-12-25 14:32:52 INFO  AuthenticationTest:41 - Loging in as user anandchndrn@demo.com
+2020-12-25 14:32:53 DEBUG PurchaseTest:54 - login window opened
+2020-12-25 14:32:53 DEBUG PurchaseTest:56 - Entered user name anandchndrn@demo.com
+2020-12-25 14:32:53 DEBUG PurchaseTest:58 - entered password demoblaze@123
+2020-12-25 14:32:53 DEBUG AuthenticationTest:44 - login window opened
+2020-12-25 14:32:54 DEBUG AuthenticationTest:46 - Entered user name anandchndrn@demo.com
+2020-12-25 14:32:54 DEBUG AuthenticationTest:48 - entered password demoblaze@123
+2020-12-25 14:32:58 DEBUG PurchaseTest:61 - user succsfully logged in
+2020-12-25 14:32:58 DEBUG AuthenticationTest:55 - logged in username is visible in home page
+2020-12-25 14:32:58 DEBUG AuthenticationTest:57 - user was successfully logged in
+2020-12-25 14:32:58 DEBUG Listners:36 - Test Passed
+2020-12-25 14:32:58 DEBUG PurchaseTest:65 - opening product category Phones
+2020-12-25 14:32:59 INFO  Listners:27 - starting Test Case: userLogoutTest
+2020-12-25 14:32:59 INFO  AuthenticationTest:65 - loging out
+2020-12-25 14:32:59 DEBUG PurchaseTest:69 - opening product page for  HTC One M9
+2020-12-25 14:33:00 INFO  AuthenticationTest:67 - logout link was clicked
+2020-12-25 14:33:00 DEBUG PurchaseTest:73 - Price of HTC One M9 is $700
+2020-12-25 14:33:01 DEBUG AuthenticationTest:71 - logged out username is not visible in home page
+2020-12-25 14:33:01 DEBUG AuthenticationTest:73 - user was successfully logged out
+2020-12-25 14:33:01 DEBUG Listners:36 - Test Passed
+2020-12-25 14:33:01 INFO  PurchaseTest:75 - adding HTC One M9 to the cart
+2020-12-25 14:33:01 INFO  Listners:27 - starting Test Case: invaliduserLoginTest
+2020-12-25 14:33:01 INFO  AuthenticationTest:82 - Loging in without valid user id 
+2020-12-25 14:33:02 DEBUG PurchaseTest:79 - alert opened with text: Product added.
+2020-12-25 14:33:02 DEBUG PurchaseTest:82 - the alert text matches expected
+2020-12-25 14:33:02 DEBUG PurchaseTest:85 - alert accepted
+2020-12-25 14:33:02 DEBUG PurchaseTest:86 - HTC One M9 was added to the cart
+2020-12-25 14:33:02 INFO  PurchaseTest:89 - Navigating to cart
+2020-12-25 14:33:02 DEBUG AuthenticationTest:85 - login window opened
+2020-12-25 14:33:02 DEBUG AuthenticationTest:87 - Entered user name invalid_user@demo.com
+2020-12-25 14:33:02 DEBUG AuthenticationTest:89 - entered password demoblaze@123
+2020-12-25 14:33:03 DEBUG PurchaseTest:93 - cart was loaded
+2020-12-25 14:33:03 DEBUG AuthenticationTest:95 - alert opened with text: User does not exist.
+2020-12-25 14:33:03 DEBUG AuthenticationTest:99 - the alert text matches expected
+2020-12-25 14:33:03 DEBUG AuthenticationTest:102 - alert accepted
+2020-12-25 14:33:04 DEBUG AuthenticationTest:104 - login window was closed
+2020-12-25 14:33:04 DEBUG Listners:36 - Test Passed
+2020-12-25 14:33:05 DEBUG PurchaseTest:97 - the product in cart is HTC One M9
+2020-12-25 14:33:05 DEBUG PurchaseTest:100 - the price in cart is $700
+2020-12-25 14:33:05 INFO  PurchaseTest:102 - proceding to pay
+2020-12-25 14:33:06 DEBUG PurchaseTest:106 - filling payment info
+2020-12-25 14:33:06 DEBUG CartPage:98 - name Anand entered
+2020-12-25 14:33:06 DEBUG CartPage:102 - country India entered
+2020-12-25 14:33:06 DEBUG CartPage:106 - city Bangalore entered
+2020-12-25 14:33:06 DEBUG CartPage:110 - card 123456789012 entered
+2020-12-25 14:33:07 DEBUG CartPage:114 - month April entered
+2020-12-25 14:33:07 DEBUG CartPage:118 - month 2020 entered
+2020-12-25 14:33:07 DEBUG PurchaseTest:109 - purchasing product
+2020-12-25 14:33:07 DEBUG PurchaseTest:111 - product purchase complete
+2020-12-25 14:33:07 DEBUG Listners:36 - Test Passed
