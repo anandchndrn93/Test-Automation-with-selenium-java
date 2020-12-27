@@ -1,5 +1,5 @@
 # Selenium sample automation framework
-This is a sample test Automation Framework utilizing selenium with java built to automate 6 tests for https://www.demoblaze.com/
+This is a sample test Automation Framework utilizing selenium with java built to automate 7 tests for https://www.demoblaze.com/.
 
 Project uses TestNG framework. extent reports has been integrated with the help of testng listners and log4j has been integrated
 
@@ -13,9 +13,13 @@ BrowserFactory and DriverFactory classes help achieve thread safety.
 
 
 # How To Run
+change browser name in /demoblaze-selenium/src/main/resources/config/config.properties. valid ones are firefox or chrome.
+
+open  /demoblaze-selenium/src/main/resources/config/data.properties. Make any required changes. provide valid productCategory and productName.
+
 in eclipse Run>Run Configurations.
 
-select Suite(testng.xml)
+select Suite(/demoblaze-selenium/demoblaze.xml)
 
 open arguments tab
 
