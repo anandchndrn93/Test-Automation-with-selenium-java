@@ -1,13 +1,18 @@
 package com.demoblaze.tests;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -29,7 +34,7 @@ public class PurchaseTest extends TestBase {
 	public static Logger log = LogManager.getLogger(PurchaseTest.class.getName());
 	WebDriver driverlocal;
 
-	@BeforeTest(alwaysRun=true)
+	@BeforeMethod(alwaysRun = true)
 	public void setConfig() {
 		launchBrowser();
 		driverlocal = getDriver();
@@ -63,7 +68,7 @@ public class PurchaseTest extends TestBase {
 
 		home.getProductCategoryLink().click(); // select product category
 		log.debug("opening product category " + MyConfig.getBundle().get("productCategory"));
-		wait.waituntillElementIsClickable(home.getProductLink(), 5);
+		wait.waituntillElementIsVisible(home.getProductTable(), 5);
 		common.scrollIntoView(home.getProductLink());
 		home.getProductLink().click();
 		log.debug("opening product page for  " + MyConfig.getBundle().get("productName"));
@@ -113,7 +118,114 @@ public class PurchaseTest extends TestBase {
 		Listners.getReporter().log(Status.PASS, "Product purchase was completed");
 	}
 
-	@AfterTest(alwaysRun=true)
+	@Test(groups = {  "regression" })
+	public void purchaseAllProductsInCategory() {
+		Listners.getReporter().log(Status.INFO,
+				"verifying if user can all procucts ina category and remove them from cart");
+		// login as valid user
+		String username = MyConfig.getBundle().get("demoblaze.login.username");
+		String password = MyConfig.getBundle().get("demoblaze.login.password");
+		log.info("Loging in as user " + username);
+		home.getLoginLink().click();
+		wait.waituntillElementIsVisible(home.getLoginText(), 2); // wait till login text in login window is visible
+		log.debug("login window opened");
+		home.setUserName(username);
+		log.debug("Entered user name " + username);
+		home.setPassword(password);
+		log.debug("entered password " + password);
+		home.getLoginButton().click();
+		wait.waituntillElementIsVisible(home.getLogoutLink(), 15); // wait till logout link is visible
+		log.debug("user succsfully logged in");
+		Listners.getReporter().log(Status.PASS, "user succsfully logged in");
+		int currentCatelogSize = home.getallProductElements().size();
+		home.getProductCategoryLink().click(); // select product category
+		log.debug("opening product category " + MyConfig.getBundle().get("productCategory"));
+		wait.waituntillElementIsVisible(home.getProductTable(), 5);
+		int CategoryCatelogSize = currentCatelogSize;
+		while (currentCatelogSize == CategoryCatelogSize) {
+			// waiting till the category completely loads
+			CategoryCatelogSize = home.getallProductElements().size();
+			home.getProductCategoryLink().click();
+			wait.waituntillElementIsVisible(home.getProductTable(), 5);
+		}
+		List<String> xpathList = new ArrayList();
+		while (true) {
+			// handle StaleElementReferenceException. repeat task since some elements
+			// disappear from dom
+			try {
+				xpathList.addAll(home.getAllProductLinks());
+				break;
+			} catch (StaleElementReferenceException se) {
+				log.debug("some elements disappearerd from dom.");
+			}
+		}
+		for (String xpath : xpathList) {
+			wait.waituntillElementIsPresent(xpath, 5);
+			WebElement element;
+			String prodcutName;
+			while (true) {
+				// handle StaleElementReferenceException. repeat task since some elements
+				// disappear from dom
+				try {
+					element = home.getElement(xpath);
+					common.scrollIntoView(element);
+					prodcutName = element.getText();
+					element.click();
+					break;
+				} catch (StaleElementReferenceException se) {
+					log.debug("some elements disapperaerd from dom.");
+				}
+			}
+			log.debug("opening product page for  " + prodcutName);
+
+			wait.waituntillElementIsClickable(product.getAddToCartLink(), 5);// wait till add to cart button is
+																				// clickable
+			String price = StringUtils.substringBefore(product.getPriceText(), "*").trim(); // get price of product
+			log.debug("Price of " + prodcutName + " is " + price);
+			product.getAddToCartLink().click();
+			log.info("adding " + prodcutName + " to the cart");
+
+			Alert cartAlert = common.switchToAlert();
+			String addedToCartText = cartAlert.getText();
+			log.debug("alert opened with text: " + addedToCartText);
+			// verify alert text
+			Assert.assertEquals(addedToCartText, "Product added.", "the alert text does not match expected");
+			log.debug("the alert text matches expected");
+			// accept and close alert
+			cartAlert.accept();
+			log.debug("alert accepted");
+			log.debug(prodcutName + " was added to the cart");
+			Listners.getReporter().log(Status.PASS, prodcutName + "was added to the cart");
+			product.getHomePageLink().click();
+			home.getProductCategoryLink().click(); // select product category
+			log.debug("opening product category " + MyConfig.getBundle().get("productCategory"));
+			wait.waituntillElementIsVisible(home.getProductTable(), 5);
+			while (CategoryCatelogSize != home.getallProductElements().size()) {
+				home.getProductCategoryLink().click();
+				wait.waituntillElementIsVisible(home.getProductTable(), 5);
+			}
+		}
+
+		log.debug("opening cart");
+		home.getCartLink().click();
+		wait.waituntillElementIsVisible(cart.getAddedProductTable(), 5);// wait till added product table button is
+		// visible
+		log.debug("cart was loaded");
+		log.info("proceding to pay");
+		cart.getPlaceOrderButton().click();
+
+		wait.waituntillElementIsVisible(cart.getPlaceOrderText(), 5);
+		log.debug("filling payment info");
+		cart.fillPaymentInfo();
+		cart.getPurchaseButton().click();
+		log.debug("purchasing product");
+		wait.waituntillElementIsVisible(cart.getThankText(), 5);
+		log.debug("product purchase complete");
+		cart.getokButton().click();
+		Listners.getReporter().log(Status.PASS, "Product purchase was completed");
+	}
+
+	@AfterMethod(alwaysRun = true)
 	public void testTearDown() {
 		driverlocal.close();
 	}

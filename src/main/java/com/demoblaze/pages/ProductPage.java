@@ -21,7 +21,10 @@ public class ProductPage {
 
 	@FindBy(id = "cartur")
 	WebElement cartLink;
-
+    
+	@FindBy(xpath = "//a[contains(text(),'Home')]")
+	WebElement homPageLink;
+	
 	public WebElement getAddToCartLink() {
 		return addToCartLink;
 	}
@@ -32,5 +35,9 @@ public class ProductPage {
 
 	public String getPriceText() {
 		return priceText.getText();
+	}
+	
+	public WebElement getHomePageLink() {
+		return homPageLink;
 	}
 }

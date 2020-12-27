@@ -1,5 +1,7 @@
 package com.demoblaze.pages;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -53,13 +55,16 @@ public class CartPage {
 
 	@FindBy(id = "orderModalLabel")
 	WebElement placeOrderText;
-	
+
 	@FindBy(xpath = "//h2[contains(text(),'Thank you')]")
 	WebElement thankText;
-	
+
 	@FindBy(xpath = "//button[contains(text(),'OK')]")
 	WebElement okButton;
-	
+
+	@FindBy(xpath = "//a[contains(@onclick,'deleteItem')]")
+	List<WebElement> allDeleteLinks;
+
 	public WebElement getPlaceOrderButton() {
 		return placeOrderButton;
 	}
@@ -75,23 +80,23 @@ public class CartPage {
 	public WebElement getAddedProductTable() {
 		return addedProductTable;
 	}
-    
+
 	public WebElement getPurchaseButton() {
 		return purchaseButton;
 	}
-	
+
 	public WebElement getPlaceOrderText() {
 		return placeOrderText;
 	}
-	
+
 	public WebElement getThankText() {
 		return thankText;
 	}
-	
+
 	public WebElement getokButton() {
 		return okButton;
 	}
-	
+
 	public void fillPaymentInfo() {
 		nameTextbox.clear();
 		nameTextbox.sendKeys(MyConfig.getBundle().get("name"));
@@ -116,5 +121,9 @@ public class CartPage {
 		yearTextbox.clear();
 		yearTextbox.sendKeys(MyConfig.getBundle().get("year"));
 		log.debug("month " + MyConfig.getBundle().get("year") + " entered");
+	}
+
+	public List<WebElement> getAllDeleteLinks() {
+		return allDeleteLinks;
 	}
 }

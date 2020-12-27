@@ -1,5 +1,11 @@
 package com.demoblaze.pages;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -9,7 +15,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.demoblaze.resource.MyConfig;
-import com.demoblaze.tests.ContactTest;
 
 public class HomePage {
 
@@ -63,13 +68,22 @@ public class HomePage {
 
 	@FindBy(id = "recipient-name")
 	WebElement nameTextbox;
-	
+
 	@FindBy(id = "message-text")
 	WebElement messageTextbox;
-	
+
 	@FindBy(xpath = "//button[@onclick='send()']")
 	WebElement sendMessageButton;
-	
+
+	@FindBy(xpath = "//div[@id='tbodyid']//h4/a")
+	List<WebElement> allProductLinks;
+
+	@FindBy(xpath = "//div[@id='tbodyid']")
+	WebElement productTable;
+
+	@FindBy(id = "cartur")
+	WebElement cartLink;
+
 	public void setUserName(String strUserName) {
 		usernameTextBox.clear();
 		usernameTextBox.sendKeys(strUserName);
@@ -133,18 +147,45 @@ public class HomePage {
 		emailTextbox.clear();
 		emailTextbox.sendKeys(MyConfig.getBundle().get("demoblaze.login.username"));
 		log.debug("email " + MyConfig.getBundle().get("demoblaze.login.username") + " was entered");
-		
+
 		nameTextbox.clear();
 		nameTextbox.sendKeys(MyConfig.getBundle().get("name"));
 		log.debug("name " + MyConfig.getBundle().get("name") + " was entered");
-		
+
 		messageTextbox.clear();
 		messageTextbox.sendKeys("Thanks for the DemoSite.");
 		log.debug("message Thanks for the DemoSite was entered");
-			
+
 	}
-	
+
 	public WebElement getSendMessageButton() {
 		return sendMessageButton;
 	}
+
+	public List<String> getAllProductLinks() {
+		List<String> productxpaths = new ArrayList<String>();
+		for (WebElement element : allProductLinks) {
+			String productName = element.getText();
+			String product = "//a[contains(text(),'" + productName + "')]";
+			productxpaths.add(product);
+		}
+		return productxpaths;
+	}
+
+	public WebElement getProductTable() {
+		return productTable;
+	}
+
+	public WebElement getElement(String xpath) {
+		return driver.findElement(By.xpath(xpath));
+	}
+
+	public WebElement getCartLink() {
+		return cartLink;
+	}
+	
+	public List<WebElement> getallProductElements(){
+		return allProductLinks;
+	}
+	
 }

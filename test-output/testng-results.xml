@@ -1,57 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="5" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-25T14:32:42 IST" name="Suite" finished-at="2020-12-25T14:33:07 IST" duration-ms="25405">
+  <suite started-at="2020-12-27T13:55:45 IST" name="Suite" finished-at="2020-12-27T13:57:29 IST" duration-ms="104464">
     <groups>
       <group name="regression">
+        <method signature="AuthenticationTest.cancelLogintest()[pri:3, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" name="cancelLogintest" class="com.demoblaze.tests.AuthenticationTest"/>
         <method signature="AuthenticationTest.invaliduserLoginTest()[pri:2, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" name="invaliduserLoginTest" class="com.demoblaze.tests.AuthenticationTest"/>
         <method signature="AuthenticationTest.userLoginTest()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" name="userLoginTest" class="com.demoblaze.tests.AuthenticationTest"/>
         <method signature="AuthenticationTest.userLogoutTest()[pri:1, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" name="userLogoutTest" class="com.demoblaze.tests.AuthenticationTest"/>
-        <method signature="PurchaseTest.purchaseProduct()[pri:0, instance:com.demoblaze.tests.PurchaseTest@a7e2d9d]" name="purchaseProduct" class="com.demoblaze.tests.PurchaseTest"/>
+        <method signature="PurchaseTest.purchaseAllProductsInCategory()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" name="purchaseAllProductsInCategory" class="com.demoblaze.tests.PurchaseTest"/>
+        <method signature="PurchaseTest.purchaseProduct()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" name="purchaseProduct" class="com.demoblaze.tests.PurchaseTest"/>
+        <method signature="ContactTest.sendMessageTest()[pri:0, instance:com.demoblaze.tests.ContactTest@5990e6c5]" name="sendMessageTest" class="com.demoblaze.tests.ContactTest"/>
       </group> <!-- regression -->
       <group name="sanity">
         <method signature="AuthenticationTest.invaliduserLoginTest()[pri:2, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" name="invaliduserLoginTest" class="com.demoblaze.tests.AuthenticationTest"/>
         <method signature="AuthenticationTest.userLoginTest()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" name="userLoginTest" class="com.demoblaze.tests.AuthenticationTest"/>
         <method signature="AuthenticationTest.userLogoutTest()[pri:1, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" name="userLogoutTest" class="com.demoblaze.tests.AuthenticationTest"/>
-        <method signature="PurchaseTest.purchaseProduct()[pri:0, instance:com.demoblaze.tests.PurchaseTest@a7e2d9d]" name="purchaseProduct" class="com.demoblaze.tests.PurchaseTest"/>
+        <method signature="PurchaseTest.purchaseAllProductsInCategory()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" name="purchaseAllProductsInCategory" class="com.demoblaze.tests.PurchaseTest"/>
+        <method signature="PurchaseTest.purchaseProduct()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" name="purchaseProduct" class="com.demoblaze.tests.PurchaseTest"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2020-12-25T14:32:42 IST" name="authentication" finished-at="2020-12-25T14:33:04 IST" duration-ms="22463">
+    <test started-at="2020-12-27T13:55:45 IST" name="authentication" finished-at="2020-12-27T13:56:18 IST" duration-ms="32908">
       <class name="com.demoblaze.tests.AuthenticationTest">
-        <test-method is-config="true" signature="setConfig()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-25T14:32:42 IST" name="setConfig" finished-at="2020-12-25T14:32:52 IST" duration-ms="10489" status="PASS">
+        <test-method is-config="true" signature="setConfig()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-27T13:55:45 IST" name="setConfig" finished-at="2020-12-27T13:56:00 IST" duration-ms="14922" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setConfig -->
-        <test-method signature="userLoginTest()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-25T14:32:52 IST" name="userLoginTest" finished-at="2020-12-25T14:32:58 IST" duration-ms="5198" status="PASS">
+        <test-method signature="userLoginTest()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-27T13:56:00 IST" name="userLoginTest" finished-at="2020-12-27T13:56:09 IST" duration-ms="9727" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLoginTest -->
-        <test-method signature="userLogoutTest()[pri:1, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-25T14:32:59 IST" name="userLogoutTest" finished-at="2020-12-25T14:33:01 IST" depends-on-methods="com.demoblaze.tests.AuthenticationTest.userLoginTest" duration-ms="1933" status="PASS">
+        <test-method signature="userLogoutTest()[pri:1, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-27T13:56:10 IST" name="userLogoutTest" finished-at="2020-12-27T13:56:12 IST" depends-on-methods="com.demoblaze.tests.AuthenticationTest.userLoginTest" duration-ms="1899" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogoutTest -->
-        <test-method signature="invaliduserLoginTest()[pri:2, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-25T14:33:01 IST" name="invaliduserLoginTest" finished-at="2020-12-25T14:33:04 IST" duration-ms="2407" status="PASS">
+        <test-method signature="invaliduserLoginTest()[pri:2, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-27T13:56:13 IST" name="invaliduserLoginTest" finished-at="2020-12-27T13:56:15 IST" duration-ms="2314" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invaliduserLoginTest -->
-        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-25T14:33:04 IST" name="testTearDown" finished-at="2020-12-25T14:33:04 IST" duration-ms="179" status="PASS">
+        <test-method signature="cancelLogintest()[pri:3, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-27T13:56:16 IST" name="cancelLogintest" finished-at="2020-12-27T13:56:17 IST" duration-ms="1094" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelLogintest -->
+        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.demoblaze.tests.AuthenticationTest@7c22d4f]" started-at="2020-12-27T13:56:17 IST" name="testTearDown" finished-at="2020-12-27T13:56:18 IST" duration-ms="173" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->
       </class> <!-- com.demoblaze.tests.AuthenticationTest -->
     </test> <!-- authentication -->
-    <test started-at="2020-12-25T14:32:42 IST" name="purchase" finished-at="2020-12-25T14:33:07 IST" duration-ms="25405">
+    <test started-at="2020-12-27T13:55:45 IST" name="purchase" finished-at="2020-12-27T13:57:29 IST" duration-ms="104464">
       <class name="com.demoblaze.tests.PurchaseTest">
-        <test-method is-config="true" signature="setConfig()[pri:0, instance:com.demoblaze.tests.PurchaseTest@a7e2d9d]" started-at="2020-12-25T14:32:42 IST" name="setConfig" finished-at="2020-12-25T14:32:52 IST" duration-ms="9545" status="PASS">
+        <test-method is-config="true" signature="setConfig()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" started-at="2020-12-27T13:55:45 IST" name="setConfig" finished-at="2020-12-27T13:56:00 IST" duration-ms="14745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setConfig -->
-        <test-method signature="purchaseProduct()[pri:0, instance:com.demoblaze.tests.PurchaseTest@a7e2d9d]" started-at="2020-12-25T14:32:52 IST" name="purchaseProduct" finished-at="2020-12-25T14:33:07 IST" duration-ms="15268" status="PASS">
+        <test-method signature="purchaseAllProductsInCategory()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" started-at="2020-12-27T13:56:00 IST" name="purchaseAllProductsInCategory" finished-at="2020-12-27T13:57:03 IST" duration-ms="63754" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- purchaseAllProductsInCategory -->
+        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" started-at="2020-12-27T13:57:04 IST" name="testTearDown" finished-at="2020-12-27T13:57:04 IST" duration-ms="166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTearDown -->
+        <test-method is-config="true" signature="setConfig()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" started-at="2020-12-27T13:57:04 IST" name="setConfig" finished-at="2020-12-27T13:57:11 IST" duration-ms="7545" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setConfig -->
+        <test-method signature="purchaseProduct()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" started-at="2020-12-27T13:57:11 IST" name="purchaseProduct" finished-at="2020-12-27T13:57:29 IST" duration-ms="17095" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- purchaseProduct -->
-        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.demoblaze.tests.PurchaseTest@a7e2d9d]" started-at="2020-12-25T14:33:07 IST" name="testTearDown" finished-at="2020-12-25T14:33:07 IST" duration-ms="111" status="PASS">
+        <test-method is-config="true" signature="testTearDown()[pri:0, instance:com.demoblaze.tests.PurchaseTest@5471388b]" started-at="2020-12-27T13:57:29 IST" name="testTearDown" finished-at="2020-12-27T13:57:29 IST" duration-ms="206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTearDown -->

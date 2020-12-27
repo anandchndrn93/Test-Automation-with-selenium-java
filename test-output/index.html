@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>E:\eclipse-workspace\demoblaze-selenium\testng.xml</span>
+                    <span>C:\Users\Anand.INFRRDAD\Wrokspace\demoblaze-selenium\demoblaze.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,17 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demoblaze.tests.AuthenticationTest" class="method navigator-link" hash-for-method="cancelLogintest">cancelLogintest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.demoblaze.tests.AuthenticationTest" class="method navigator-link" hash-for-method="invaliduserLoginTest">invaliduserLoginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.demoblaze.tests.PurchaseTest" class="method navigator-link" hash-for-method="purchaseAllProductsInCategory">purchaseAllProductsInCategory</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -140,6 +150,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="cancelLogintest">
+                  </a> <!-- cancelLogintest -->
+                  <span class="method-name">cancelLogintest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="invaliduserLoginTest">
                   </a> <!-- invaliduserLoginTest -->
                   <span class="method-name">invaliduserLoginTest</span>
@@ -169,6 +186,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="purchaseAllProductsInCategory">
+                  </a> <!-- purchaseAllProductsInCategory -->
+                  <span class="method-name">purchaseAllProductsInCategory</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="purchaseProduct">
                   </a> <!-- purchaseProduct -->
                   <span class="method-name">purchaseProduct</span>
@@ -179,7 +203,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\eclipse-workspace\demoblaze-selenium\testng.xml</span>
+            <span class="header-content">C:\Users\Anand.INFRRDAD\Wrokspace\demoblaze-selenium\demoblaze.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -271,7 +295,15 @@
               <span class="test-group-name">regression</span>
               <br/>
               <div class="method-in-group">
+                <span class="method-in-group-name">cancelLogintest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">invaliduserLoginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">purchaseAllProductsInCategory</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -292,6 +324,10 @@
               <br/>
               <div class="method-in-group">
                 <span class="method-in-group-name">invaliduserLoginTest</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">purchaseAllProductsInCategory</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -323,28 +359,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'purchaseProduct')
+data.setCell(0, 1, 'purchaseAllProductsInCategory')
 data.setCell(0, 2, 'com.demoblaze.tests.PurchaseTest')
-data.setCell(0, 3, 15268);
+data.setCell(0, 3, 63754);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'userLoginTest')
-data.setCell(1, 2, 'com.demoblaze.tests.AuthenticationTest')
-data.setCell(1, 3, 5198);
+data.setCell(1, 1, 'purchaseProduct')
+data.setCell(1, 2, 'com.demoblaze.tests.PurchaseTest')
+data.setCell(1, 3, 17095);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'invaliduserLoginTest')
+data.setCell(2, 1, 'userLoginTest')
 data.setCell(2, 2, 'com.demoblaze.tests.AuthenticationTest')
-data.setCell(2, 3, 2407);
+data.setCell(2, 3, 9727);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'userLogoutTest')
+data.setCell(3, 1, 'invaliduserLoginTest')
 data.setCell(3, 2, 'com.demoblaze.tests.AuthenticationTest')
-data.setCell(3, 3, 1933);
+data.setCell(3, 3, 2314);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'userLogoutTest')
+data.setCell(4, 2, 'com.demoblaze.tests.AuthenticationTest')
+data.setCell(4, 3, 1899);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'cancelLogintest')
+data.setCell(5, 2, 'com.demoblaze.tests.AuthenticationTest')
+data.setCell(5, 3, 1094);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 25 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -359,23 +403,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.demoblaze.tests.AuthenticationTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">cancelLogintest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.demoblaze.tests.ContactTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">sendMessageTest</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -384,65 +414,85 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.demoblaze.tests.PurchaseTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.demoblaze.tests.AuthenticationTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setConfig</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">com.demoblaze.tests.AuthenticationTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">setConfig</span>
-                <span class="method-start">1 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">com.demoblaze.tests.ContactTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setConfig</span>
-                <span class="method-start">1 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.demoblaze.tests.PurchaseTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setConfig</span>
+                <span class="method-start">48 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">purchaseProduct</span>
-                <span class="method-start">9589 ms</span>
+                <span class="method-name">purchaseAllProductsInCategory</span>
+                <span class="method-start">14794 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.demoblaze.tests.ContactTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test after">
-                <span class="method-name">testTearDown</span>
-                <span class="method-start">9627 ms</span>
-              </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.demoblaze.tests.AuthenticationTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">userLoginTest</span>
-                <span class="method-start">10496 ms</span>
+                <span class="method-start">14947 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demoblaze.tests.ContactTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">userLogoutTest</span>
-                <span class="method-start">16596 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">invaliduserLoginTest</span>
-                <span class="method-start">19200 ms</span>
+                <span class="method-name">sendMessageTest</span>
+                <span class="method-start">14973 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">testTearDown</span>
-                <span class="method-start">22270 ms</span>
+                <span class="method-start">23341 ms</span>
+              </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.demoblaze.tests.AuthenticationTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">userLogoutTest</span>
+                <span class="method-start">25572 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">invaliduserLoginTest</span>
+                <span class="method-start">28045 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">cancelLogintest</span>
+                <span class="method-start">30986 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">testTearDown</span>
+                <span class="method-start">32721 ms</span>
               </div> <!-- configuration-test after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.demoblaze.tests.PurchaseTest</div> <!-- chronological-class-name -->
-              <div class="configuration-test after">
+              <div class="configuration-method after">
                 <span class="method-name">testTearDown</span>
-                <span class="method-start">25280 ms</span>
-              </div> <!-- configuration-test after -->
+                <span class="method-start">79012 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setConfig</span>
+                <span class="method-start">79179 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">purchaseProduct</span>
+                <span class="method-start">86724 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">testTearDown</span>
+                <span class="method-start">104244 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

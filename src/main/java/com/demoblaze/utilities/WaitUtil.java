@@ -1,5 +1,8 @@
 package com.demoblaze.utilities;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,4 +32,14 @@ public class WaitUtil {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
+	public void waituntillElementIsPresent(String xpath, int Timeout) {
+		wait = new WebDriverWait(driver, Timeout);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+
+	}
+
+	public void waituntillAllElementsVisible(List<WebElement> elements, int Timeout) {
+		wait = new WebDriverWait(driver, Timeout);
+		wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+	}
 }

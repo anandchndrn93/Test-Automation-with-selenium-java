@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests" thread-count="3">
-	<method-selectors>
-		<method-selector>
-			<script language="beanshell">  <![CDATA[groupToRun = System.getProperty("groupName");
-                groups.containsKey(groupToRun);
-                ]]></script>
-		</method-selector>
-	</method-selectors>
+<suite name="Suite">
 	<listeners>
 		<listener class-name="com.demoblaze.resource.Listners"></listener>
 	</listeners>
-	<test name="authentication" enabled="true">
-		<classes>
-			<class name="com.demoblaze.tests.AuthenticationTest" />
-		</classes>
-	</test> <!-- Test -->
-	<test name="purchase" enabled="true">
+	<test thread-count="5" name="Test">
 		<classes>
 			<class name="com.demoblaze.tests.PurchaseTest" />
-		</classes>
-	</test> <!-- Test -->
-	<test name="contact" enabled="true">
-		<classes>
-			<class name="com.demoblaze.tests.ContactTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
