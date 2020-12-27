@@ -3,7 +3,7 @@ This is a sample test Automation Framework utilizing selenium with java built to
 
 Project uses TestNG framework. extent reports has been integrated with the help of testng listners and log4j has been integrated
 
-design pattern followed is Page Object Model 
+design pattern followed is Page Object Model. Browsers used are chrome and firefox 
 
 xml file has been created to run tests in 3 parallel threads. Test cases are grouped in to regression cases and sanity cases. The group can be chosen by passing groupname as a parmeter. This was achieved by adding bean scripts to xml
 
